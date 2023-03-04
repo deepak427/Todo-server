@@ -78,7 +78,7 @@ export const checkTodo = async (req, res) => {
         existingTodo.checkedTodos.push(todo);   
     }else {
         existingTodo.totalTodos.push(todo);
-        existingTodo.checkedTodos.pop(todo);   
+        existingTodo.checkedTodos.splice(index_2,1);   
     }
 
     await Todo.findByIdAndUpdate(existingTodo._id, existingTodo);
