@@ -74,7 +74,7 @@ export const checkTodo = async (req, res) => {
     const index_2 = existingTodo.checkedTodos.findIndex((Todo) => Todo === todo);
 
     if (index_2 === -1) {
-        existingTodo.totalTodos.pop(todo);
+        existingTodo.totalTodos.splice(index_1, 1);
         existingTodo.checkedTodos.push(todo);   
     }else {
         existingTodo.totalTodos.push(todo);
